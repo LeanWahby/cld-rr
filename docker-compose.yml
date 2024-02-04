@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  nest-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nest_cont1
+    volumes:
+      - .:/nest-app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+
+
+
+# docker-compose up
+# docker-compose up -d
+# docker-compose up --build
+# docker-compose down
