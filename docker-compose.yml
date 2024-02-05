@@ -1,5 +1,8 @@
 version: '3'
 
+volumes:
+  data-volume:
+    
 services:
   nest-app:
     build:
@@ -11,17 +14,22 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - NODE_ENV=development
-
+      NODE_ENV: development
+      MONGODB_HOST: mongodb
 
   mongo:
     image: mongo
     restart: always
+    container_name: mongodb
     ports:
       - "27017:27017"
+    volumes:
+      - data-volume:/data/db
+
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin1
       MONGO_INITDB_ROOT_PASSWORD: admin1
+
 
 
 
