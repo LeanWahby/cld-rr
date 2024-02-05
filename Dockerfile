@@ -38,3 +38,6 @@ CMD ["npm", "run", "start:dev"]
 # docker run --name nest_cont1 -v /E:/NewChapter/nest/leantasks/docker/docker:/nest-app -p 3000:3000 nest_app1 : 'run container locally' hot reload
 # docker run --name nest_cont1 -v //e/NewChapter/nest/leantasks/docker/docker:/nest-app -p 3000:3000 nest_app1 'windows'
 # docker run --name nest_cont1 -v /E:/NewChapter/nest/leantasks/docker/docker:/nest-app:ro -p 3000:3000 nest_app1
+
+
+# docker network ls

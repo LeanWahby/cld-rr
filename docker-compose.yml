@@ -14,8 +14,20 @@ services:
       - NODE_ENV=development
 
 
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin1
+      MONGO_INITDB_ROOT_PASSWORD: admin1
+
+
+
 
 # docker-compose up
 # docker-compose up -d
 # docker-compose up --build
 # docker-compose down
+# docker exec -it docker-mongo-1 mongosh -u admin -p admin // to run mongosh inside mongo container + auth info
