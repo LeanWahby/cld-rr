@@ -15,7 +15,7 @@ import { MongooseModule } from '@nestjs/mongoose';
     }),
     MongooseModule.forRootAsync({
       useFactory: () => ({
-        uri: envConfigurations().mongo_cont_uri.Uri,
+        uri: envConfigurations().mongodb.MONGO_URI,
       }),
     }),
     UserModule,
