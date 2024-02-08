@@ -1,5 +1,5 @@
 steps:
-  # This step builds the container image.
+
   - name: 'gcr.io/cloud-builders/docker'
     id: Build
     args:
@@ -8,21 +8,18 @@ steps:
       - 'gcr.io/$PROJECT_ID/DashLego:$SHORT_SHA'
       - '.'
 
-  # This step pushes the image to Container Registry
-  # The PROJECT_ID and SHORT_SHA variables are automatically
-  # replaced by Cloud Build.
   - name: 'gcr.io/cloud-builders/docker'
     id: Push
     args:
       - 'push'
       - 'gcr.io/$PROJECT_ID/DashLego:$SHORT_SHA'
 
-    # Deploy container image to Cloud Run
+
   - name: 'gcr.io/cloud-builders/gcloud'
     args:
       - 'run'
       - 'deploy'
-      - 'cld-run_wahba'
+      - 'cld-run-wahba'
       - '--image'
       - 'gcr.io/$PROJECT_ID/DashLego:$SHORT_SHA'
       - '--region'
@@ -30,5 +27,9 @@ steps:
       - '--platform'
       - 'managed'
       - '--allow-unauthenticated'
+
 images:
   - 'gcr.io/$PROJECT_ID/DashLego:$SHORT_SHA'
+
+
+
