@@ -1,14 +1,10 @@
 version: '3'
 
-volumes:
-  data-volume:
-
 services:
   nest-app:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: nest_cont1
     volumes:
       - .:/nest-app
     ports:
