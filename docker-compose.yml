@@ -17,8 +17,8 @@ services:
 
 
 
-# docker-compose up
-# docker-compose up -d
-# docker-compose up --build
-# docker-compose down
+# docker-compose up // to run the app
+# docker-compose up -d // to run the app in detached mode
+# docker-compose up --build // to rebuild the app
+# docker-compose down // to stop the app
 # docker exec -it docker-mongo-1 mongosh -u admin -p admin // to run mongosh inside mongo container + auth info
