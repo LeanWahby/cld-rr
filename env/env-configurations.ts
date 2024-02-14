@@ -3,7 +3,9 @@ export const envConfigurations = () => ({
     MONGO_URI:
       'mongodb+srv://wahbafarag01:I12XZxJm9YUYm4kx@cluster0.5dqyt0s.mongodb.net/',
   },
-
+  PORT: {
+    port: process.env.PORT || 3000,
+  },
   // mongoHostInfo: {
   //   DB_USERNAME: process.env.DB_USERNAME,
   //   DB_PASSWORD: process.env.DB_PASSWORD,
