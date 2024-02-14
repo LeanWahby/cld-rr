@@ -1,27 +1,27 @@
 # download node image 'baseImage'
 FROM node:18
 
-# create app directory
-WORKDIR /nest-app
 
-# copy package.json and package-lock.json
-# now container has app dependencies and nodejs
-COPY package.json /nest-app
-#COPY package-lock.json /nest-app
+WORKDIR /app
 
-# install dependencies
-RUN npm install
+#COPY package.json package-lock.json /app/
+COPY package-lock.json ./
+COPY package.json /app
 
-# copy app code and other files
-COPY . /nest-app
+#RUN npm install
+RUN npm ci
 
+COPY . .
 
-# define app port 'documentation purposes'
-EXPOSE 3000
+RUN npm run build
 
-# execute the app
-CMD ["npm", "run", "start:dev"]
+#CMD ["npm", "start"]
 #CMD ["npm", "run", "start"]
+ADD run.sh ./app/run.sh
+RUN chmod +x ./app/run.sh
+CMD [ "/bin/sh", "./run.sh" ]
+
+
 
 # Dockerfile -> Docker Image 'Blueprint for containers' -> Docker Container
 
