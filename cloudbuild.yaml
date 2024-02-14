@@ -22,7 +22,7 @@ steps:
     args:
       - 'run'
       - 'deploy'
-      - 'crowdfunding-backend-staging'
+      - 'cld-run-wahby'
       - '--image'
       - 'gcr.io/$PROJECT_ID/github.com/leanwahby/cld_run11:$SHORT_SHA'
       - '--region'

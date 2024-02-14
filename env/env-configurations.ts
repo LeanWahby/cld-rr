@@ -1,5 +1,8 @@
 export const envConfigurations = () => ({
-  mongodb: { MONGO_URI: process.env.MONGO_URI },
+  mongodb: {
+    MONGO_URI:
+      'mongodb+srv://wahbafarag01:I12XZxJm9YUYm4kx@cluster0.5dqyt0s.mongodb.net/',
+  },
 
   // mongoHostInfo: {
   //   DB_USERNAME: process.env.DB_USERNAME,

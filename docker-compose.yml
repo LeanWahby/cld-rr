@@ -10,7 +10,7 @@ services:
     volumes:
       - .:/app
     environment:
-      - "NODE_ENV=${NODE_ENV}"
+      - "NODE_ENV=staging"
 
 
 
